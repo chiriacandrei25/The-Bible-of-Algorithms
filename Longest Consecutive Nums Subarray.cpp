@@ -11,7 +11,7 @@ int longestConsecNumsSubarray() {
     int ans = 0;
     for(int Left = 1; Left <= n; Left++) {
         for(int i = 1; i <= n; i++)
-            fr[i] = false;
+            fr[a[i]] = false;
         int Min = a[Left], Max = a[Left];
         for(int Right = Left; Right <= n; Right++) {
             if(fr[a[Right]] == true)
