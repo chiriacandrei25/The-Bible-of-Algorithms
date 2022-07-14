@@ -6,7 +6,7 @@ using namespace std;
 bool isPrime(int n) {
     if(n <= 1)
         return false;
-    for(int i = 2; i < sqrt(n); i++) {
+    for(int i = 2; i <= sqrt(n); i++) {
         if(n % i == 0)
             return false;
     }
@@ -15,6 +15,6 @@ bool isPrime(int n) {
 
 int main()
 {
-    cout << isPrime(137);
+    cout << isPrime(137); // 1 = prime ; 0 = not prime
     return 0;
 }
