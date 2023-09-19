@@ -1,21 +1,22 @@
 class Solution {
 public:
-    int countPalindromesWithCenter(string input, int left, int right) {
-        int result = 0;
-        while (0 <= left && right < input.size() &&
-                    input[left] == input[right]) {
-            result += 1;
-            left -= 1;
-            right += 1;
-        }
-        return result;
+    bool isPalindrome(string input, int left, int right) {
+        string first = input.substr(left, right - left + 1);
+        string second = first;
+        reverse(second.begin(), second.end());
+        return first == second;
     }
+    
 	int countPalindromes(string input) {
         int result = 0;
         for (int i = 0; i < input.size(); i++) {
-            result += countPalindromesWithCenter(input, i, i);
-            result += countPalindromesWithCenter(input, i, i + 1);
+            for (int j = i; j < input.size(); j++) {
+                if (isPalindrome(input, i, j)) {
+                    result++;
+                }
+            }
         }
         return result;
     }
 };
+
