@@ -19,7 +19,7 @@ long long sum_of(int a[], int n) {
 }
 
 long long bSearch(int a[], int n, int k) {
-    long long Left = 0, Right = sum_of(a, n), ans;
+    long long Left = 0, Right = sum_of(a, n)/k, ans;
     while(Left <= Right) {
         long long Mid = (Left + Right) / 2;
         if(isValid(a, n, k, Mid)) {
